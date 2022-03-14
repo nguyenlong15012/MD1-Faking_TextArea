@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking text area</title>
+</head>
+<body onload="tinh()">
+<center>
+    <h1>Type anything slowly</h1>
+    <label>
+        <textarea id="rs" style="width: 500px;height: 200px"></textarea>
+    </label>
+</center>
+</body>
+</html>
+<script>
+    let a = " Tôi yêu em!!!";
+    let arr = [];
+    arr = a.split("");
+    let str = "";
+    console.log('ktra mảng',arr)
+    function tinh(){
+        let txt = document.getElementById("rs").value;
+        console.log('check txt.length', txt.length);
+        for (let i=1;i<=txt.length;i++){
+            str = str + arr[i];
+            console.log('ktra chuôi',str)
+            if (i==18){
+                str = "";
+            }
+        }
+        document.getElementById("rs").value = str;
+        str = "";
+        setTimeout(tinh,1)
+    }
+</script>
